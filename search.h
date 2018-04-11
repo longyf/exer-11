@@ -15,6 +15,7 @@ T search2(T num[], int begin, int end) {
 
 template <class T>
 T search(T num[], int length) {
+
 	if (num==nullptr||length<=0)
 		throw invalid_argument("Pay attention to the input array.");
 	if (length==1)
@@ -22,12 +23,13 @@ T search(T num[], int length) {
 
 	int begin=0;
 	int end=length-1;
-	int middle=0;
+	int middle=begin;
 
+	//这一步的目的是保证递增数列，比如1，2，3。循环里面的语句不会执行，直接返回的就是num[0]。
 	while (num[begin]>=num[end]) {
-		if (end-begin==1) {
-			return num[end];
-		}
+
+		//这一步是普通的旋转数组的结束标志。
+		if (end-begin==1) return num[end];
 
 		middle=(begin+end)>>1;
 
@@ -45,5 +47,6 @@ T search(T num[], int length) {
 		}
 	}
 	return num[middle];
+
 }
 #endif		

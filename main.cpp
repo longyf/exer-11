@@ -44,13 +44,13 @@ void test7() {
 }
 
 void test8() {
-    const int length=5;
-    int array[length]={1,2,3,4,5};
+    const int length=10;
+    int array[length]={1,2,3,4,5,6,7,8,9,10};
     cout<<search(array, length)<<endl;
 }
 
 int main() {
-	test1();
+/*	test1();
 	test2();
 	test3();
 	test4();
@@ -62,7 +62,7 @@ int main() {
 		cout<<e.what()<<endl;
 	}
 	test6();
-	test7();
+	test7();*/
 	test8();
 	return 0;
 }
